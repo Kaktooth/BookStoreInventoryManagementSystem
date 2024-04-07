@@ -1,14 +1,5 @@
 ## Spring Boot application for bookstore inventory management.
 
----
-
-title: "Habits"
-output:
-    html_document:
-        toc: true
-        toc_depth: 2
----
-
 <details>
 <summary>
 Project Dependencies and Technologies
