@@ -1,0 +1,48 @@
+version: "3"
+services:
+  db:
+    image: bitnami/postgresql:latest
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -p 5432" ]
+      interval: 10s
+      timeout: 3s
+      retries: 3
+    environment:
+      PGUSER: test
+      POSTGRES_USER: test
+      POSTGRESQL_PASSWORD: test
+      POSTGRES_DB: test_db
+    restart: on-failure
+
+  pgadmin:
+    image: dpage/pgadmin4
+    restart: always
+    ports:
+      - "8888:80"
+    environment:
+      PGADMIN_DEFAULT_EMAIL: test-user@gmail.com
+      PGADMIN_DEFAULT_PASSWORD: test
+
+  book_store_management_system:
+    depends_on:
+      db:
+        condition: service_healthy
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: "book_store_management_system"
+    ports:
+      - "8080:8080"
+      - "9090:9090"
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/test_db
+      - SPRING_DATASOURCE_USERNAME=test
+      - SPRING_DATASOURCE_PASSWORD=test
+    deploy:
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 60
+        window: 30s

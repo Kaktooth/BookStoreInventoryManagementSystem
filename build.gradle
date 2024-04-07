@@ -1,0 +1,112 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version "${springBootVersion}"
+    id 'io.spring.dependency-management' version "${dependencyManagmentVersion}"
+    id 'com.google.protobuf' version "${protobufGradlePluginVersion}"
+    id 'jacoco'
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+
+repositories {
+    gradlePluginPortal()
+    mavenCentral()
+}
+
+dependencies {
+
+    compileOnly "org.citrusframework:citrus-spring:${citrusframeworkVersion}"
+    compileOnly "org.projectlombok:lombok:${lombokVersion}"
+    annotationProcessor "org.projectlombok:lombok:${lombokVersion}"
+
+    implementation "org.springframework.boot:spring-boot-starter-web"
+    implementation "org.springframework.boot:spring-boot-starter-webflux"
+    implementation "org.springframework.boot:spring-boot-starter-data-jpa"
+    implementation "org.hibernate.validator:hibernate-validator:${hibernateValidatorVersion}"
+    implementation "org.postgresql:postgresql"
+    implementation "org.flywaydb:flyway-core"
+
+    implementation "org.mapstruct:mapstruct:${mapstructVersion}"
+    annotationProcessor "org.mapstruct:mapstruct-processor:${mapstructVersion}"
+    implementation "org.projectlombok:lombok-mapstruct-binding:${lombokMapstructBindingVersion}"
+
+    implementation "io.grpc:grpc-protobuf:${grpcVersion}"
+    implementation "io.grpc:grpc-services:${grpcVersion}"
+    implementation "io.grpc:grpc-stub:${grpcVersion}"
+    implementation "io.grpc:grpc-inprocess:${grpcVersion}"
+    implementation "io.grpc:grpc-netty:${grpcVersion}"
+
+    //for generated gRpc class annotations
+    implementation "javax.annotation:javax.annotation-api:${javaxVersion}"
+
+    implementation "org.citrusframework:citrus-base:${citrusframeworkVersion}"
+    implementation "org.citrusframework:citrus-spring:${citrusframeworkVersion}"
+    implementation "org.citrusframework:citrus-http:${citrusframeworkVersion}"
+    implementation "org.citrusframework:citrus-junit5:${citrusframeworkVersion}"
+    implementation "org.citrusframework:citrus-sql:${citrusframeworkVersion}"
+
+    implementation "com.fasterxml.jackson.core:jackson-core:${jacksonVersion}"
+
+    implementation "org.testcontainers:postgresql:${testContainersPostgreSqlVersion}"
+
+    implementation 'org.springframework.boot:spring-boot-starter-logging'
+    implementation 'org.springframework.boot:spring-boot-starter-log4j2'
+
+    testImplementation "org.projectlombok:lombok:${lombokVersion}"
+    testImplementation 'org.testcontainers:junit-jupiter'
+    testImplementation "org.testcontainers:postgresql:${testContainersPostgreSqlVersion}"
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'org.springframework.boot:spring-boot-testcontainers'
+    testImplementation "io.grpc:grpc-testing:${grpcVersion}"
+    testImplementation "org.citrusframework:citrus-validation-json:${citrusframeworkVersion}"
+    testImplementation "org.citrusframework:citrus-jms:${citrusframeworkVersion}"
+    testImplementation "org.mockito:mockito-core:${mockitoVersion}"
+}
+
+protobuf {
+    protoc { artifact = "com.google.protobuf:protoc:${protobufVersion}" }
+    plugins {
+        grpc { artifact = "io.grpc:protoc-gen-grpc-java:${grpcVersion}" }
+    }
+    generateProtoTasks {
+        all().configureEach { task ->
+            task.plugins {
+                grpc {}
+            }
+        }
+    }
+}
+
+sourceSets {
+    main {
+        proto {
+            srcDir 'src/main/protobuf'
+        }
+    }
+    test {
+        proto {
+            srcDir 'src/test/protobuf'
+        }
+    }
+}
+
+test {
+    useJUnitPlatform()
+    finalizedBy jacocoTestReport
+}
+
+jacocoTestReport {
+    dependsOn test
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
+
+
+
+

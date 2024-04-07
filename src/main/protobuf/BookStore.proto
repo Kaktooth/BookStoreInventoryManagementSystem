@@ -1,0 +1,60 @@
+syntax = "proto3";
+
+package com.kaktooth.bookstore.inventory_management.protobuf;
+option java_package = "com.kaktooth.bookstore.inventory_management.protobuf";
+option java_outer_classname = "BookStoreInventoryManagerProto";
+option java_multiple_files = true;
+
+service BookStoreInventoryManager {
+
+  rpc AddBook(Book) returns (Book) {};
+  rpc UpdateBook(Book) returns (Book) {};
+  rpc DeleteBook(Book) returns (Book) {};
+  rpc RetrieveBooks(RetrieveRequest) returns (stream Book) {};
+}
+
+message Book {
+  string title = 1;
+  string author = 2;
+  Genre genre = 3;
+  string isbn = 4;
+  uint32 quantity = 5;
+}
+
+enum BookRetrieveOption {
+  BY_ISBN = 0;
+  BY_TITLE = 1;
+  BY_AUTHOR = 2;
+  BY_GENRE = 3;
+}
+
+message RetrieveRequest {
+  BookRetrieveOption bookRetrieveOption = 1;
+  string requestValue = 2;
+}
+
+enum Genre {
+  UNIDENTIFIED = 0;
+  SPECULATIVE = 1;
+  REALIST = 2;
+  ADVENTURE = 3;
+  COMING_OF_AGE = 4;
+  CRIME = 5;
+  FANTASY = 6;
+  MILITARY = 7;
+  PARANORMAL = 8;
+  ROMANCE = 9;
+  SCIENCE_FICTION = 10;
+  SUPERNATURAL = 11;
+  WESTERN = 12;
+  HORROR = 13;
+  HISTORICAL = 14;
+  ENCYCLOPEDIC = 15;
+  ACADEMIC = 16;
+  HISTORY = 17;
+  PHILOSOPHY = 18;
+  COMEDY = 19;
+  ESSAY = 20;
+  JOURNALISM = 21;
+  NATURE = 22;
+}
