@@ -23,7 +23,7 @@ class ProtobufTests {
   @ParameterizedTest
   @MethodSource("com.kaktooth.bookstore.inventory_management.unit.server.ProtobufTests#getGenreRange")
   void whenEntityGenreEqualToProtobufGenreReturnTrue(int genreNumber) {
-    if (genreNumber > 22) {
+    if (genreNumber > Genre.values().length) {
       assertThrows(NullPointerException.class, () -> Genre.forNumber(genreNumber).name());
       return;
     }

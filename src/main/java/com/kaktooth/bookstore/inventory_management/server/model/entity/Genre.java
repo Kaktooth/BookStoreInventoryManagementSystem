@@ -28,7 +28,8 @@ public enum Genre {
   COMEDY("Comedy"),
   ESSAY("Essay"),
   JOURNALISM("Journalism"),
-  NATURE("Nature");
+  NATURE("Nature"),
+  REFERENCE("Reference");
 
   private final String genreName;
 }

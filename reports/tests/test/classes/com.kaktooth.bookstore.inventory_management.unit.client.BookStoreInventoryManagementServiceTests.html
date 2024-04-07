@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - BookStoreInventoryManagementServiceTests</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>BookStoreInventoryManagementServiceTests</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/com.kaktooth.bookstore.inventory_management.unit.client.html">com.kaktooth.bookstore.inventory_management.unit.client</a> &gt; BookStoreInventoryManagementServiceTests</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">13</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">0.135s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Tests</a>
+</li>
+<li>
+<a href="#tab1">Standard output</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">whenBookAddedWithSameIsbnShouldThrowException()</td>
+<td class="success">0.021s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">whenBookForUpdateIsValidReturnsUpdatedBook()</td>
+<td class="success">0.011s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">whenBookParamsForUpdateIsInvalidThrowException()</td>
+<td class="success">0.007s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">whenDeletingBookWithExistingIsbnReturnDeletedBook()</td>
+<td class="success">0.025s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">whenDeletingBookWithNonExistingIsbnThrowException()</td>
+<td class="success">0.005s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">whenRetrievingBookByInvalidGenreThrowException()</td>
+<td class="success">0.005s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">whenRetrievingBookByNotExistingAuthorThrowException()</td>
+<td class="success">0.008s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">whenRetrievingBookByNotExistingGenreThrowException()</td>
+<td class="success">0.007s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">whenRetrievingBookByNotExistingIsbnThrowException()</td>
+<td class="success">0.008s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">whenRetrievingBookByValidAuthorReturnBooks()</td>
+<td class="success">0.009s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">whenRetrievingBookByValidGenreReturnBooks()</td>
+<td class="success">0.010s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">whenRetrievingBookByValidIsbnReturnBook()</td>
+<td class="success">0.010s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">whenUploadedBookIsNotFoundByIsbnForUpdateThrowException()</td>
+<td class="success">0.009s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div id="tab1" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>2024-04-07T18:22:12.620+03:00  INFO 1052 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.kaktooth.bookstore.inventory_management.BookStoreInventoryManagementApplication for test class com.kaktooth.bookstore.inventory_management.unit.client.BookStoreInventoryManagementServiceTests
+2024-04-07T18:22:12.634+03:00  INFO 1052 --- [    Test worker] ookStoreInventoryManagementServiceClient : New book with title 'Tim Adventures' is created.
+2024-04-07T18:22:12.654+03:00  INFO 1052 --- [    Test worker] ookStoreInventoryManagementServiceClient : Book 'Tim New Adventures 2' is updated.
+2024-04-07T18:22:12.683+03:00  INFO 1052 --- [    Test worker] ookStoreInventoryManagementServiceClient : Book 'Tim New Adventures 2' is retrieved.
+2024-04-07T18:22:12.701+03:00  INFO 1052 --- [    Test worker] ookStoreInventoryManagementServiceClient : Book 'Tim New Adventures 2' is retrieved.
+2024-04-07T18:22:12.720+03:00  INFO 1052 --- [    Test worker] ookStoreInventoryManagementServiceClient : Book 'Tim New Adventures 2' is retrieved.
+2024-04-07T18:22:12.747+03:00  INFO 1052 --- [    Test worker] ookStoreInventoryManagementServiceClient : Book 'Tim New Adventures 2' is retrieved.
+2024-04-07T18:22:12.751+03:00  INFO 1052 --- [    Test worker] ookStoreInventoryManagementServiceClient : Book 'Tim New Adventures 2' is retrieved.
+2024-04-07T18:22:12.758+03:00  INFO 1052 --- [    Test worker] ookStoreInventoryManagementServiceClient : Book 'Tim New Adventures 2' is removed.
+2024-04-07T18:22:12.764+03:00  INFO 1052 --- [    Test worker] ookStoreInventoryManagementServiceClient : New book with title 'Tim New Adventures 2' is created.
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 8.7</a> at Apr 7, 2024, 6:22:25 PM</p>
+</div>
+</div>
+</body>
+</html>

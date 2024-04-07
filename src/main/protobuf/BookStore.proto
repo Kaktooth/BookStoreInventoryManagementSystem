@@ -57,4 +57,5 @@ enum Genre {
   ESSAY = 20;
   JOURNALISM = 21;
   NATURE = 22;
+  REFERENCE = 23;
 }
