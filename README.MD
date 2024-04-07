@@ -54,6 +54,9 @@ Core dependencies and technologies
 API Navigation
 </summary>
 
+
+Our default http port is 8080 and grpc port 9090.
+
 ### Add Book
 
 ```
