@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.kaktooth.bookstore.inventory_management.integration.BookStoreInventoryManagementIntegrationTests" time="0.0" tests="16" errors="0" skipped="0" failures="0">
+    <testcase name="whenNotExistingBookIsUploadedReturnUploadedBookWithStatusOk" classname="com.kaktooth.bookstore.inventory_management.integration.BookStoreInventoryManagementIntegrationTests" time="0.0"/>
+    <testcase name="whenUploadingInvalidBookReturnStatusInvalidArgument" classname="com.kaktooth.bookstore.inventory_management.integration.BookStoreInventoryManagementIntegrationTests" time="0.0"/>
+    <testcase name="whenUploadingExistingBookReturnStatusAlreadyExists" classname="com.kaktooth.bookstore.inventory_management.integration.BookStoreInventoryManagementIntegrationTests" time="0.0"/>
+    <testcase name="whenBookIsUpdatedReturnStatusOk" classname="com.kaktooth.bookstore.inventory_management.integration.BookStoreInventoryManagementIntegrationTests" time="0.0"/>
+    <testcase name="whenBookIsUpdatedWithInvalidBookParametersReturnStatusInvalidArgument" classname="com.kaktooth.bookstore.inventory_management.integration.BookStoreInventoryManagementIntegrationTests" time="0.0"/>
+    <testcase name="retrieveExistingBookByIsbnReturnsBookWithStatusOk" classname="com.kaktooth.bookstore.inventory_management.integration.BookStoreInventoryManagementIntegrationTests" time="0.0"/>
+    <testcase name="retrieveExistingBooksByTitleReturnsBooksWithStatusOk" classname="com.kaktooth.bookstore.inventory_management.integration.BookStoreInventoryManagementIntegrationTests" time="0.0"/>
+    <testcase name="retrieveExistingBooksByAuthorReturnsBooksWithStatusOk" classname="com.kaktooth.bookstore.inventory_management.integration.BookStoreInventoryManagementIntegrationTests" time="0.0"/>
+    <testcase name="retrieveExistingBooksByGenreReturnsBooksWithStatusOk" classname="com.kaktooth.bookstore.inventory_management.integration.BookStoreInventoryManagementIntegrationTests" time="0.0"/>
+    <testcase name="whenRemovingExistingBookReturnRemovedBookWithStatusOk" classname="com.kaktooth.bookstore.inventory_management.integration.BookStoreInventoryManagementIntegrationTests" time="0.0"/>
+    <testcase name="removeNotExistingBookReturnsStatusNotFound" classname="com.kaktooth.bookstore.inventory_management.integration.BookStoreInventoryManagementIntegrationTests" time="0.0"/>
+    <testcase name="retrievingNonExistingBookByIsbnReturnsResponseWithStatusNotFound" classname="com.kaktooth.bookstore.inventory_management.integration.BookStoreInventoryManagementIntegrationTests" time="0.0"/>
+    <testcase name="retrievingNonExistingBooksByTitleReturnsResponseWithStatusNotFound" classname="com.kaktooth.bookstore.inventory_management.integration.BookStoreInventoryManagementIntegrationTests" time="0.0"/>
+    <testcase name="retrievingNonExistingBooksByAuthorReturnsBooksWithStatusNotFound" classname="com.kaktooth.bookstore.inventory_management.integration.BookStoreInventoryManagementIntegrationTests" time="0.0"/>
+    <testcase name="retrievingNonExistingBooksByGenreReturnsResponseWithStatusNotFound" classname="com.kaktooth.bookstore.inventory_management.integration.BookStoreInventoryManagementIntegrationTests" time="0.0"/>
+    <testcase name="retrievingBooksByInvalidGenreReturnsResponseWithStatusInvalidArgument" classname="com.kaktooth.bookstore.inventory_management.integration.BookStoreInventoryManagementIntegrationTests" time="0.0"/>
+</testsuite>
